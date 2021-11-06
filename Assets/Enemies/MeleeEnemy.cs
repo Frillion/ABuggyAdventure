@@ -21,7 +21,6 @@ public class MeleeEnemy : MonoBehaviour, IChase
     {
         path_finder = GetComponent<AStarPathFinding>();
     }
-
     public IEnumerator FollowPath()
     {
         if (path.Length > 0 && path != null)
@@ -39,6 +38,7 @@ public class MeleeEnemy : MonoBehaviour, IChase
                     }
                     current_waypoint = path[target_index];
                 }
+                Move();
                 yield return null;
             }
         }

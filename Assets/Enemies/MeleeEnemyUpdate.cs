@@ -15,6 +15,5 @@ public class MeleeEnemyUpdate : MonoBehaviour
     void Update()
     {
         Chaser.StartPath();
-        Chaser.Move();
     }
 }
