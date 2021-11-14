@@ -477,6 +477,14 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 871813976}
+    - target: {fileID: 968469310570417675, guid: 6323a6e3c3624704bbc6277815b6ace5, type: 3}
+      propertyPath: DrawGridGizmos
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 968469310570417675, guid: 6323a6e3c3624704bbc6277815b6ace5, type: 3}
+      propertyPath: Obsticles.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 968469310570417678, guid: 6323a6e3c3624704bbc6277815b6ace5, type: 3}
       propertyPath: m_RootOrder
       value: 0

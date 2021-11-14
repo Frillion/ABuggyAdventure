@@ -9,7 +9,6 @@ public class RangedEnemyUpdate : MonoBehaviour
     
     private IChase chaser;
     private Hover hover;
-    
 
     private void Start()
     {
