@@ -8,7 +8,6 @@ public class FieldOfView : MonoBehaviour
     public float view_radius;
     [Range(0,360)]
     public float view_angle;
-    public float angle_offset;
 
     public LayerMask target_mask;
     public LayerMask obsticle_mask;
@@ -18,23 +17,7 @@ public class FieldOfView : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine("FindVisibleTargetsWithDelay",.2f);
-    }
-
-
-    public float InputToDegrees(Vector3 inputs)
-    {
-        if ((float)Math.Round((double)inputs.y,1) == 0.7f)
-        {
-            if ((float)Math.Round((double)inputs.x, 1) == 0.7f) {  return 90f;  }
-            else if((float)Math.Round((double)inputs.x, 1) == -0.7f) {  return 630f; }
-        }
-        else if ((float)Math.Round((double)inputs.y, 1) == -0.7f)
-        {
-            if ((float)Math.Round((double)inputs.x, 1) == 0.7f) {  return 270f; }
-            else if ((float)Math.Round((double)inputs.x, 1) == -0.7f) { return 450f; }
-        }
-        return 0;
+        StartCoroutine("FindVisibleTargetsWithDelay", .2f);
     }
 
     IEnumerator FindVisibleTargetsWithDelay(float delay)
@@ -50,12 +33,12 @@ public class FieldOfView : MonoBehaviour
     {
         visible_targets.Clear();
         Collider2D[] targets_in_radius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x,transform.position.y),view_radius,target_mask, -Mathf.Infinity, Mathf.Infinity);
+        
 
         for (int i = 0; i < targets_in_radius.Length; i++)
         {
             Transform target = targets_in_radius[i].transform;
             Vector2 direction_to_target = (target.position - transform.position).normalized;
-            Debug.Log(direction_to_target);
             if (Vector2.Angle((new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical"))).normalized  ,direction_to_target) < view_angle/2 && Vector2.Angle(new Vector2(Input.GetAxis("Horizontal"), Input.GetAxis("Vertical")).normalized, direction_to_target) != 0)
             {
                 float distance_to_target = Vector2.Distance(transform.position,target.position);

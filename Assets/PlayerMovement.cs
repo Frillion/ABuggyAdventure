@@ -6,9 +6,14 @@ public class PlayerMovement : MonoBehaviour
 {
 
     public float moveSpeed;
-    public Rigidbody2D rb;
+    private Rigidbody2D rb;
 
     private Vector2 moveDirection;
+
+    private void Start()
+    {
+        rb = gameObject.GetComponent<Rigidbody2D>();
+    }
 
     // Update is called once per frame
     void Update()
