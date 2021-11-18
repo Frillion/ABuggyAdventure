@@ -12,12 +12,17 @@ public class RangedEnemyUpdate : MonoBehaviour
     private DoesRunAway runner;
     private FieldOfView is_scared;
 
+    private void Awake()
+    {
+        is_scared = GameObject.FindGameObjectWithTag("Player").GetComponent<FieldOfView>();
+        is_scared.StartDetection();
+    }
+
     private void Start()
     {
         chaser = GetComponent<IChase>();
         hover = gameObject.GetComponent<Hover>();
         runner = gameObject.GetComponent<DoesRunAway>();
-        is_scared = GameObject.FindGameObjectWithTag("Player").GetComponent<FieldOfView>();
     }
 
     void Update()

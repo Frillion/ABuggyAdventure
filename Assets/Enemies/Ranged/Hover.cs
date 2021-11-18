@@ -10,7 +10,7 @@ public class Hover : MonoBehaviour
 
     public void HoverBehaviour()
     {
-        transform.LookAt(target);
         transform.RotateAround(target.position, new Vector3(0, 0, 1), hovermode_speed * Time.deltaTime);
+        transform.rotation = Quaternion.Euler(0, 0, 0);
     }
 }

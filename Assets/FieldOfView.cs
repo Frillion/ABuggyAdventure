@@ -15,7 +15,7 @@ public class FieldOfView : MonoBehaviour
     [HideInInspector]
     public List<Transform> visible_targets = new List<Transform>();
 
-    private void Start()
+    public void StartDetection()
     {
         StartCoroutine("FindVisibleTargetsWithDelay", .2f);
     }
@@ -32,8 +32,8 @@ public class FieldOfView : MonoBehaviour
     void FindVisibleTargets()
     {
         visible_targets.Clear();
-        Collider2D[] targets_in_radius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x,transform.position.y),view_radius,target_mask, -Mathf.Infinity, Mathf.Infinity);
-        
+
+        Collider2D[] targets_in_radius = Physics2D.OverlapCircleAll(new Vector2(transform.position.x, transform.position.y), view_radius, target_mask, -Mathf.Infinity, Mathf.Infinity);
 
         for (int i = 0; i < targets_in_radius.Length; i++)
         {

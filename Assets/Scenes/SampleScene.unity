@@ -329,7 +329,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af0970f4636b72540b82380ab3c66506, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  view_radius: 10
+  view_radius: 9.29
   view_angle: 90
   target_mask:
     serializedVersion: 2
@@ -371,7 +371,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!1001 &953069335
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -460,10 +460,6 @@ PrefabInstance:
       propertyPath: target
       value: 
       objectReference: {fileID: 871813976}
-    - target: {fileID: 5882337075621771730, guid: da47dbee72bc97d4ea59b52af50ed6ef, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5882337075621771731, guid: da47dbee72bc97d4ea59b52af50ed6ef, type: 3}
       propertyPath: m_RootOrder
       value: 2

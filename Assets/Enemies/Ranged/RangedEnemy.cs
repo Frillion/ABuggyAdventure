@@ -72,7 +72,6 @@ public class RangedEnemy : MonoBehaviour, IChase
 
     public void Move()
     {
-        transform.LookAt(current_waypoint);
         transform.position += GetForce(speed, GetDirection());
     }
 
